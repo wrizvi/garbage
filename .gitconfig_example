@@ -1,0 +1,31 @@
+[branch]
+    autosetuprebase = always
+[alias]
+    co = checkout
+    br = branch
+    au = add --update :/
+    st = status
+    d = diff --color
+    df = diff --cached --color
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    new = !sh -c 'git lg --stat $1@{1}..$1@{0} "$@"'
+    info = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    fix = commit --amend -C HEAD
+    pul = !sh -c 'git pull'
+    #dry = !sh -c 'git diff --stat origin/master && git push --dry-run'
+    dry = !sh -c 'git diff --stat && git push --dry-run'
+    dir = log -n 50 -- $1
+    spul = !sh -c 'git stash && git pul && git stash pop'
+    sl = stash list
+    sp = stash pop
+    sd = stash drop
+    s0 = stash show stash@{0} --color
+    s1 = stash show stash@{1} --color
+    s2 = stash show stash@{2} --color
+    s3 = stash show stash@{3} --color
+    conf = config --edit --global
+[push]
+    default = matching
+[user]
+    email = whomst@dve.com
+    name = piledriver maxime
