@@ -35,7 +35,7 @@ set ignorecase
 set softtabstop=4
 colorscheme badwolf
 
-" properly pasting in tmux without indentation being applied.
+" allows for proper system clipboard pasting in tmux (no indentation applied).
 function! WrapForTmux(s)
   if !exists('$TMUX')
     return a:s
