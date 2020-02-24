@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Start Ubuntu Container
+ubuntu(){
+    docker run --rm -it \
+    --name ubuntu \
+    ubuntu:latest \
+    /bin/bash
+}
